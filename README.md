@@ -4,37 +4,30 @@
 To develop a convolutional autoencoder for image denoising application.
 
 ## Problem Statement and Dataset
-A convolutional autoencoder for image denoising learns to compress images into a lower-dimensional representation and then reconstructs clean images from noisy inputs. It consists of encoder layers that extract features, a bottleneck that captures essential information, and decoder layers that reconstruct the denoised image. The model is trained to minimize the difference between the output and the clean target images. This approach effectively removes noise while preserving important details in the images.
+
+This code implements a Denoising Autoencoder using PyTorch to clean noisy images from the MNIST dataset. It uses a convolutional neural network architecture, where the encoder compresses the input image into a lower-dimensional representation, and the decoder reconstructs the original image from this compressed form. To train the model to remove noise, Gaussian noise is added to the clean images, and the network learns to recover the original from the noisy version. The training process uses Mean Squared Error (MSE) as the loss function to measure the reconstruction error and the Adam optimizer to update the model weights. The autoencoder is trained over multiple epochs using mini-batches of data for efficiency. After training, the model's performance is visually evaluated by displaying the original, noisy, and denoised images side by side.
 
 ## DESIGN STEPS
-# STEP 1: 
-Problem Understanding and Dataset Selection
+STEP 1: Problem Understanding and Dataset Selection
 
-# STEP 2: 
-Preprocessing the Dataset
+STEP 2: Preprocessing the Dataset
 
-# STEP 3: 
-Design the Convolutional Autoencoder Architecture
+STEP 3: Design the Convolutional Autoencoder Architecture
 
-# STEP 4: 
-Compile and Train the Model
+STEP 4: Compile and Train the Model
 
-# STEP 5: 
-Evaluate the Model
+STEP 5: Evaluate the Model
 
-# STEP 6:
-Visualization and Analysis
-
-
+STEP 6: Visualization and Analysis
 
 ## PROGRAM
 
-### Name: SANTHOSH V
+### Name:DHAMINI S
 
-### Register Number: 212224230252
+### Register Number:212224040064
 
 ```python
-#import torch.nn as nn
+import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
@@ -84,14 +77,14 @@ model = DenoisingAutoencoder().to(device)
 criterion = nn.MSELoss()
 optimizer = optim.Adam(model.parameters(), lr=1e-3)
 
-print("Name: SANTHOSH V")
-print("Register Number:212224230252")
+print("Name:DHAMINI S")
+print("Register Number:212224040064")
 summary(model, input_size=(1, 28, 28))
 
 def train(model, loader, criterion, optimizer, epochs=5):
     model.train()
-    print("Name: SANTHOSH V")
-    print("Register Number: 212224230252")
+    print("Name:Kamalesh y")
+    print("Register Number:212223243001")
     for epoch in range(epochs):
         running_loss = 0.0
         for images, _ in loader:
@@ -119,8 +112,8 @@ def visualize_denoising(model, loader, num_images=10):
     noisy_images = noisy_images.cpu().numpy()
     outputs = outputs.cpu().numpy()
 
-    print("Name: SANTHOSH V")
-    print("Register Number: 212224230252")
+    print("Name:DHAMINI S")
+    print("Register Number:21222404000064")
     plt.figure(figsize=(18, 6))
 
     for i in range(num_images):
@@ -147,20 +140,21 @@ def visualize_denoising(model, loader, num_images=10):
 train(model, train_loader, criterion, optimizer, epochs=5)
 visualize_denoising(model, test_loader)
 
-
 ```
 
 ### OUTPUT
 
 ### Model Summary
-<img width="728" height="423" alt="image" src="https://github.com/user-attachments/assets/f7a53f37-c69f-4565-a407-03746c052194" />
+![alt text](image.png)
 
 ### Training loss
-<img width="454" height="133" alt="image" src="https://github.com/user-attachments/assets/28822889-c14a-45b3-bd0d-ed9612e15234" />
+
+![alt text](image-1.png)
 
 ## Original vs Noisy Vs Reconstructed Image
-<img width="1677" height="600" alt="image" src="https://github.com/user-attachments/assets/37d932ff-653f-4743-b825-176b462390e6" />
+![alt text](image-2.png)
 
 ## RESULT
 Thus, develop a convolutional autoencoder for image denoising application excuted succesfully
+
 
